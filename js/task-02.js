@@ -6,14 +6,18 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
+const ulRef = document.querySelector('#ingredients');
 
+  const makeLiRef = array => {
+    return array.map(element => {
 
-  ingredients.map(element => {
-  const ulRef = document.querySelector('#ingredients');
-  const liRef = document.createElement('li');
-  liRef.textContent = element;
-  ulRef.appendChild(liRef);
-  })
+        const liRef = document.createElement('li');
+        liRef.textContent = element;
+        return liRef;
+    });
+}
 
+const liList = makeLiRef(ingredients);
+ulRef.append(...liList);
 
 
